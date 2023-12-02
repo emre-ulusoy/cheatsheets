@@ -124,11 +124,11 @@ type User struct {
 // New
 // Go supports the new expression to allocate a zeroed value of the requested type and to return a
 // _pointer_ to it.
-x := new(int)
-//
+x := new(int) // Pointer to zeroed int
+
 x := new(Bootcamp)
 y := &Bootcamp{}
-fmt.Println(*x == *y)
+fmt.Println(*x == *y) // The two are equivalent
 fmt.Printf("%+v", p) // The value in a default format when -printing structs-, the plus flag (%+v)
                      // adds field names.
 
@@ -177,10 +177,12 @@ for i, v := range pow { /**/ } // Loops over the length of pow. i = idx, v = val
 for key, value := range cities { /**/ } // For when the iterable is a "map" (dict/hash).
 
 // * IF statement
-if answer != 42 { // No parenthesis, yes brackets.
+if answer < 0 { // No parenthesis, yes brackets.
     return "Wrong answer"
-} else {
+} else if answer == 42 {
     return "Right answer"
+} else {
+    return "Whatever"
 }
 
 if v := math.Pow(x, n); v < lim { // The if statement can start with a short statement to execute
