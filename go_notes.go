@@ -25,9 +25,6 @@ var (
 )
 action() // executing the func from above
 
-// * Common Functions & stuff
-// strings.Fields(): split() in Python
-
 // * Print
 fmt.Printf("%s age %d", name, age) // %s: string, %d: decimal
 // Prints the passed in variables’ values and appends a newline. fmt.Printf is used when you want to
