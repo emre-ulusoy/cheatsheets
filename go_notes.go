@@ -133,9 +133,13 @@ fmt.Printf("%+v", p) // The value in a default format when -printing structs-, t
 // Used to create maps (dict) when not using map literals
 var m map[string]celebsAges
 cities := map[string]int{}
-cities := map[string]int{
+citieS := map[string]int{
         "New York":    8336697,
     }
+mapOfSlices := map[string][]string{
+  "cat": {"claws", "purrs"},
+  "dog": {"barks", "walds"},
+}
 delete(m, key) // Delete key in map m
 elem, ok = m[key] // Checking if key "key" exists. Bool result in ok
 for key, value := range cities {
@@ -167,12 +171,6 @@ len(cities) // length of array/slice, -> cap(cities) -> similar
 // only strings can be appended. However, using the ellipsis (...) after our slice, we indicate that
 // we want to append each element of our slice.
 
-// * Range
-for i, v := range pow { /**/ } // Loops over the length of pow. i = idx, v = value. Can omit v, can
-// also replace 'i' with '_' if you don't need either.
-// Can use "break" or "continue".
-for key, value := range cities { /**/ } // For when the iterable is a "map" (dict/hash).
-
 // * IF statement
 if answer < 0 { // No parenthesis, yes brackets.
     return "Wrong answer"
@@ -184,19 +182,26 @@ if answer < 0 { // No parenthesis, yes brackets.
 
 if v := math.Pow(x, n); v < lim { // The if statement can start with a short statement to execute
     return v 					  // before the condition.
-}
+} //
+
+// * Range
+for i, v := range pow { /**/ } // Loops over the length of pow. i = idx, v = value. Can omit v, can
+// also replace 'i' with '_' if you don't need either.
+// Can use "break" or "continue".
+for key, value := range cities { /**/ } // For when the iterable is a "map" (dict/hash).
 
 // * FOR loops (also WHILE loops)
 for i := 0; i < 10; i++ { // No parenthesis, yes brackets.
     sum += i
 }
 
+for i := range 10 {} 
+
 for sum < 1000 { 	// We can leave the pre and post statements empty. Iterate as long as sum<1000.
     sum += sum		// Also is how we implement the while loop. Same as `for ; sum < 1000; {`
 }
 
-for { // Do something in a loop forever. Same as `for true`. Also how `do while` is implemented.
-}
+for {} // Do something in a loop forever. Same as `for true`. Also how `do while` is implemented.
 
 // * Switch Case statement
 // 1. You can only compare values of the same type. 2. You can set an optional default statement to
@@ -250,7 +255,6 @@ myInterface := []Intrfc{}
 // * Errors
 // The fmt package’s various print routines automatically know to call the method when asked to
 // print an error.
-
 
 
 

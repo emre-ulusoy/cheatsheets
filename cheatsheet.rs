@@ -5,8 +5,8 @@ let mut lang = "Rust"; // mutable
 let lang:char = 'R';
 let lang:&str = "Rust"; //! Why '&'?
 let lang; // Try not to declare w/o assigning
-let (course,category) =("Rust","beginner");
-const // it is mandatory to define the data type of const variables.
+let (course,category) = ("Rust","beginner");
+const PI_VAL: f32 = 3.14159// it is mandatory to define the data type of const variables.
 //* Slices (string)
 let slice = &lang[1..3]; // Slice of one of the strings from the above examples
 
@@ -15,7 +15,8 @@ let slice = &lang[1..3]; // Slice of one of the strings from the above examples
 //* Arrays
 let arr:[i32;4] = [1, 2, 3, 4];
 let arr:[i32;4] = [5, 6, 7, 8]; // mutable arrays can be edited
-let arr1 = [0 ; 4]; // initialize an array of size 4 with 0
+let arr1 = [0; 4]; // initialize an array of size 4 with 0
+let arr:[i32;4] = [0; 4] // more verbose version of the above. So it becomes [type;size]=[vals;size] (kinda weird)
 //* Slice (array)
 let slice_array:&[i32] = &arr[0..2]; // Uses an existing array
 let slice_array = &arr;
@@ -64,10 +65,10 @@ for found in str.chars() {}
 //* Other loops: while, loop.
 // Loop 'labels
 'outer:for i in 1..5 { //outer loop
-   'inner:for j in 1..5 { // inner loop
+    'inner:for j in 1..5 { // inner loop
         if i == 3 { continue 'outer; } // Continues the loop over `i`.
         if j == 2 { continue 'inner; } // Continues the loop over `j`.
-   }
+    }
 }
 
 //* Functions
@@ -123,8 +124,8 @@ impl EnumName {
 trait TraitName { // Like interfaces in Go
     fn trait_method(&self)->f32;
  }
- impl TraitName for StructName { // Can do this for multiple structs
-    fn trait_method(&self)->f32 {
+ impl TraitName for StructName {  // Can do this for multiple structs
+    fn trait_method(&self)->f32 { // Unlike Go we have to explicityly implement traits/interfaces
         self.height * self.width
     }
  }
