@@ -4,6 +4,7 @@ SELECT * FROM table; -- Show everything
 SELECT count(*) FROM employees; -- Get count of something
 
 SELECT field1, field2 FROM table; -- Show one or more columns/fields
+
 SELECT name FROM users WHERE power_level >= 9000; -- WHERE is for specifying/filtering    
 
 CREATE TABLE users (id INTEGER, name TEXT, age INTEGER); -- Create table with the given fields
@@ -15,7 +16,7 @@ ALTER TABLE employees
   RENAME TO contractors; -- Rename table
 
 ALTER TABLE contractors
-  RENAME COLUMN salary TO invoice; -- Rename column, can also DROP, ALTER
+  RENAME COLUMN salary TO invoice; -- Rename column, can also DROP COLUMN, ADD, 
 
 -- Foreign keys
 CREATE TABLE employees (
@@ -43,7 +44,14 @@ SELECT product_name
     FROM products
     WHERE shipment_status IN ('shipped', 'preparing', 'out of stock');
 
+SELECT * FROM products -- Using LIKE, and also % and _ (%: any length, _: single char)
+  WHERE product_name LIKE '%banana%';
+
+SELECT name, price, quantity FROM products -- ORDER BY. If we omit the DESC part, it defaults to ASC. LIMIT needs to come after
+    ORDER BY quantity DESC                 -- ORDER BY.
+    LIMIT 10;
 
 /*
-  AND, OR, DISTINCT, 
+  AND, OR, DISTINCT, SUM, MAX, MIN
 */
+
