@@ -160,6 +160,7 @@ a := [2][3]string // Multi-dimensional array.
 a := []int{2, 3, 5, 7, 11, 13} // Slice literal
 s[lo:hi] // Slicing from lo to hi-1 inclusive
 cities := make([]string, 3) // basically -> cities := [3]string
+var cities []string // Same as below
 cities := []string{} // Empty slice, then append val(s)
 cities = append(cities, "San Diego", "Ankara")
 cities = append(cities, otherCities...) // Use ellipsis to append a slice to another
@@ -196,6 +197,7 @@ for i := 0; i < 10; i++ { // No parenthesis, yes brackets.
 }
 
 for i := range 10 {} 
+for range 10 {}
 
 for sum < 1000 { 	// We can leave the pre and post statements empty. Iterate as long as sum<1000.
     sum += sum		// Also is how we implement the while loop. Same as `for ; sum < 1000; {`
@@ -255,10 +257,4 @@ myInterface := []Intrfc{}
 // * Errors
 // The fmt package’s various print routines automatically know to call the method when asked to
 // print an error.
-
-
-
-
-
-
 
