@@ -257,4 +257,3 @@ myInterface := []Intrfc{}
 // * Errors
 // The fmt package’s various print routines automatically know to call the method when asked to
 // print an error.
-
