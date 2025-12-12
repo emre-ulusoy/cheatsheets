@@ -81,7 +81,10 @@ SELECT * FROM users    -- JOIN and ON, create rows that contains all the fields 
 CREATE INDEX email_idx ON users(email); -- Creating an INDEX of frequently used columns to speed up reads.
 
 /*
-  AND, OR. 
-  DISTINCT, MAX, MIN, AVG, (comes after SELECT)
+  AND, OR, <> `(!=)`, NOT IN (...),
+  Aggregates: COUNT(), MAX(), MIN(), AVG(), MOD(num, denom), ROUND(),
+  DISINCT, 
+  Conditionals: IF, CASE,
+  Iterative: LOOP, WHILE,
 */
 
